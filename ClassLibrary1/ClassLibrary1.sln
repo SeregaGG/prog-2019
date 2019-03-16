@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickSort", "ClassLibrary1\QuickSort.csproj", "{24D8F685-225D-43EB-9EDE-150C2DDED2A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickSort.Tests", "QuickSort.Tests\QuickSort.Tests.csproj", "{F49B0B23-4057-474C-8D13-D64D02240D0C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24D8F685-225D-43EB-9EDE-150C2DDED2A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24D8F685-225D-43EB-9EDE-150C2DDED2A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24D8F685-225D-43EB-9EDE-150C2DDED2A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24D8F685-225D-43EB-9EDE-150C2DDED2A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F49B0B23-4057-474C-8D13-D64D02240D0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F49B0B23-4057-474C-8D13-D64D02240D0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F49B0B23-4057-474C-8D13-D64D02240D0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F49B0B23-4057-474C-8D13-D64D02240D0C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E0F700A-752C-44D3-AB80-36F103E1ABD0}
+	EndGlobalSection
+EndGlobal
