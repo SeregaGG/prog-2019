@@ -57,8 +57,6 @@ namespace HashTable
             Array[index] = new KeyValue(key, value);
         }
 
-
-
         /// <summary>
 
         /// Поиск значения по ключу
