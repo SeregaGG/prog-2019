@@ -24,9 +24,9 @@ namespace HashTable.Tests
         public void AddTwice()
         {
             var HashTable = new HashTable(2);
-            HashTable.PutPair(1, 235);
-            HashTable.PutPair(1, 523);
-            Assert.AreEqual(523, HashTable.GetValueByKey(1));
+            HashTable.PutPair(0, 235);
+            HashTable.PutPair(0, 523);
+            Assert.AreEqual(523, HashTable.GetValueByKey(0));
         }
 
         [TestMethod]

@@ -51,7 +51,7 @@ namespace HashTable
             var index = Math.Abs(key.GetHashCode()) % Size;
             for (; Array[index] != null; index = (++index) % Size)
             {
-                if (Array[index].Key == key)
+                if (Array[index].Key.Equals(key)) 
                     break;
             }
             Array[index] = new KeyValue(key, value);
