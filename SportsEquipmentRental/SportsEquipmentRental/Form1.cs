@@ -55,21 +55,6 @@ namespace SportsEquipmentRental
             }
         }
 
-        private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            int index = this.listBox1.IndexFromPoint(e.Location);
-            if (index != System.Windows.Forms.ListBox.NoMatches)
-            {
-                var item = (Equipment)listBox1.Items[index];
-                var eq = new Equip() { Equipment = item };
-                if (eq.ShowDialog(this) == DialogResult.OK)
-                {
-                    listBox1.Items.Remove(item);
-                    listBox1.Items.Insert(index, item);
-                }
-            }
-        }
-
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             button4.Enabled = listBox1.SelectedItem is Equipment;
