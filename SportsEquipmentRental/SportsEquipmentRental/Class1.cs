@@ -18,52 +18,57 @@ namespace SportsEquipmentRental
         /// <summary>
         /// Имя
         /// </summary>
-        public string Name { get; private set; }
+        public string Name { get;  set; }
 
         /// <summary>
         /// Фамилия
         /// </summary>
-        public string Surname { get; private set; }
+        public string Surname { get;  set; }
 
         /// <summary>
         /// Отчество
         /// </summary>
-        public string Patronymic { get; private set; }
+        public string Patronymic { get;  set; }
+
+        public override string ToString()
+        {
+            return $"Фамилия: {Surname}, Имя: {Name}, Отчество: {Patronymic}";
+        }
     }
 
 
-    public class CompletingForm
-    {
-        /// <summary>
-        /// Имя покупателя
-        /// </summary>
-        public Buyer Name { get; set; }
+    //public class CompletingForm
+    //{
+    //    /// <summary>
+    //    /// Имя покупателя
+    //    /// </summary>
+    //    public Buyer Name { get; set; }
 
-        /// <summary>
-        /// Фамилия покупателя
-        /// </summary>
-        public Buyer Surname { get; set; }
+    //    /// <summary>
+    //    /// Фамилия покупателя
+    //    /// </summary>
+    //    public Buyer Surname { get; set; }
 
-        /// <summary>
-        /// Отчество покупателя
-        /// </summary>
-        public Buyer Patronymic { get; set; }
+    //    /// <summary>
+    //    /// Отчество покупателя
+    //    /// </summary>
+    //    public Buyer Patronymic { get; set; }
 
-        /// <summary>
-        /// Арендуемый инвентарь
-        /// </summary>
-        public Equipment Equip { get; set; }
+    //    /// <summary>
+    //    /// Арендуемый инвентарь
+    //    /// </summary>
+    //    public Equipment Equip { get; set; }
 
-        /// <summary>
-        /// Время аренды
-        /// </summary>
-        public DateTime Timeframe { get; private set; }
+    //    /// <summary>
+    //    /// Время аренды
+    //    /// </summary>
+    //    public DateTime Timeframe { get; private set; }
 
-        /// <summary>
-        /// Цена аренды
-        /// </summary>
-        public Equipment Price { get; private set; }
-    }
+    //    /// <summary>
+    //    /// Цена аренды
+    //    /// </summary>
+    //    public Equipment Price { get; private set; }
+    //}
 
     /// <summary>
     /// Класс продавца
@@ -73,19 +78,23 @@ namespace SportsEquipmentRental
         /// <summary>
         /// Имя
         /// </summary>
-        public string Name { get; private set; }
+        public string Name { get; set; }
         /// <summary>
         /// Фамилия
         /// </summary>
-        public string Surname { get; private set; }
+        public string Surname { get; set; }
         /// <summary>
         /// Отчество
         /// </summary>
-        public string Patronymic { get; private set; }
+        public string Patronymic { get; set; }
         /// <summary>
         /// Фото
         /// </summary>
-        public byte[] Photo { get; private set; }
+        public byte[] Photo { get;  set; }
+        public override string ToString()
+        {
+            return $"Фамилия: {Surname}, Имя: {Name}, Отчество: {Patronymic}";
+        }
     }
 
     /// <summary>
@@ -98,7 +107,7 @@ namespace SportsEquipmentRental
         /// </summary>
         public static List<string> TypeOfSports = new List<string>()
         {
-           
+           "Футбол","Баскетбол", "Валейбол", "Плавание", "Лыжный спорт", "Тэнис", "Другое"
         };
 
         /// <summary>
@@ -112,31 +121,37 @@ namespace SportsEquipmentRental
         /// <summary>
         /// Спортивный инвентарь
         /// </summary>
-        public string SportEquip { get; private set; }
+        public string SportEquip { get; set; }
 
         /// <summary>
         /// Вид спорта
         /// </summary>
-        public string TypeOfSport { get; private set; }
+        public string TypeOfSport { get; set; }
 
         /// <summary>
         /// Дата производства
         /// </summary>
-        public DateTime CreationDate { get; private set; }
+        public DateTime CreationDate { get; set; }
 
         /// <summary>
         /// Производитель
         /// </summary>
-        public string Manufacturer { get; private set; }
+        public string Manufacturer { get; set; }
 
         /// <summary>
         /// Цена товара
         /// </summary>
-        public double Price { get; private set; }
+        public string Price { get; set; }
 
         /// <summary>
         /// Цена аренды
         /// </summary>
-        public double PriceOfRental { get; private set; }
+        public string PriceOfRental { get; set; }
+
+        public override string ToString()
+        {
+            return $"Название:{SportEquip} , Вид спорта:{TypeOfSport} , Цена аренды: {PriceOfRental} , Изготовитель: {Manufacturer}, Цена товара: {Price}, Дата изготовления: {CreationDate.ToLongDateString()}";
+        }
+
     }
 }
