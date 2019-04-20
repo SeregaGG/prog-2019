@@ -48,9 +48,22 @@ namespace SportsEquipmentRental
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Buyer Buyer = new Buyer();
+            Seller Seller = new Seller();
+
+            Buyer.Name = textBox2.Text;
+            Buyer.Surname = textBox1.Text ;
+            Buyer.Patronymic = textBox3.Text;
+
+            Seller.Patronymic = textBox6.Text;
+            Seller.Name = textBox5.Text;
+            Seller.Surname = textBox4.Text;
+
             var eq = new Equip() { Equipment = new Equipment() };
             if (eq.ShowDialog(this) == DialogResult.OK)
             {
+                listBox1.Items.Add(Seller);
+                listBox1.Items.Add(Buyer);
                 listBox1.Items.Add(eq.Equipment);
             }
         }

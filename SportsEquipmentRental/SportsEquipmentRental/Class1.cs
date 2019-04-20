@@ -32,7 +32,7 @@ namespace SportsEquipmentRental
 
         public override string ToString()
         {
-            return $"Фамилия: {Surname}, Имя: {Name}, Отчество: {Patronymic}";
+            return $"Покупатель: {Surname}  {Name}  {Patronymic}";
         }
     }
 
@@ -93,7 +93,7 @@ namespace SportsEquipmentRental
         public byte[] Photo { get;  set; }
         public override string ToString()
         {
-            return $"Фамилия: {Surname}, Имя: {Name}, Отчество: {Patronymic}";
+            return $"Продавец: {Surname} {Name} {Patronymic}";
         }
     }
 
