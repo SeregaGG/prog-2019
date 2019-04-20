@@ -136,7 +136,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(86, 13);
             this.label9.TabIndex = 17;
-            this.label9.Text = "Фото продовца";
+            this.label9.Text = "Фото продавца";
             // 
             // pictureBox1
             // 
