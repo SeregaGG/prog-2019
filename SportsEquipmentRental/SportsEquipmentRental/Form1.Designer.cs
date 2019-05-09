@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.сохранитьToolStripMenuItem_Click2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -60,6 +62,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button6);
+            this.tabPage2.Controls.Add(this.сохранитьToolStripMenuItem_Click2);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.listBox1);
@@ -71,6 +75,26 @@
             this.tabPage2.Text = "Покупка";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(730, 6);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 4;
+            this.button6.Text = "Загрузить";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // сохранитьToolStripMenuItem_Click2
+            // 
+            this.сохранитьToolStripMenuItem_Click2.Location = new System.Drawing.Point(649, 6);
+            this.сохранитьToolStripMenuItem_Click2.Name = "сохранитьToolStripMenuItem_Click2";
+            this.сохранитьToolStripMenuItem_Click2.Size = new System.Drawing.Size(75, 23);
+            this.сохранитьToolStripMenuItem_Click2.TabIndex = 3;
+            this.сохранитьToolStripMenuItem_Click2.Text = "Сохранить";
+            this.сохранитьToolStripMenuItem_Click2.UseVisualStyleBackColor = true;
+            this.сохранитьToolStripMenuItem_Click2.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -200,6 +224,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 13;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // textBox5
             // 
@@ -214,6 +239,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 8;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox4
             // 
@@ -228,6 +254,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 9;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -235,6 +262,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 10;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label5
             // 
@@ -334,6 +362,8 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button сохранитьToolStripMenuItem_Click2;
     }
 }
 

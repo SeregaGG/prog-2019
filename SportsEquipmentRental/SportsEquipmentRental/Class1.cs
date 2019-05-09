@@ -37,38 +37,24 @@ namespace SportsEquipmentRental
     }
 
 
-    //public class CompletingForm
-    //{
-    //    /// <summary>
-    //    /// Имя покупателя
-    //    /// </summary>
-    //    public Buyer Name { get; set; }
+    public class CompletingForm
+    {
+        /// <summary>
+        ///Покупатель
+        /// </summary>
+        public Buyer Buyer { get; set; }
+        /// <summary>
+        ///Продавец
+        /// </summary>
 
-    //    /// <summary>
-    //    /// Фамилия покупателя
-    //    /// </summary>
-    //    public Buyer Surname { get; set; }
+        public Seller Seller { get; set; }
 
-    //    /// <summary>
-    //    /// Отчество покупателя
-    //    /// </summary>
-    //    public Buyer Patronymic { get; set; }
-
-    //    /// <summary>
-    //    /// Арендуемый инвентарь
-    //    /// </summary>
-    //    public Equipment Equip { get; set; }
-
-    //    /// <summary>
-    //    /// Время аренды
-    //    /// </summary>
-    //    public DateTime Timeframe { get; private set; }
-
-    //    /// <summary>
-    //    /// Цена аренды
-    //    /// </summary>
-    //    public Equipment Price { get; private set; }
-    //}
+        /// <summary>
+        /// Арендуемый инвентарь
+        /// </summary>
+        public string[] Equip { get; set; }
+        
+    }
 
     /// <summary>
     /// Класс продавца

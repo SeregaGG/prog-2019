@@ -21,6 +21,8 @@ namespace SportsEquipmentRental
             InitializeComponent();
         }
 
+        public Buyer buyer;
+        public Seller seller;
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -48,42 +50,128 @@ namespace SportsEquipmentRental
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Buyer Buyer = new Buyer();
-            Seller Seller = new Seller();
+            buyer = new Buyer();
+            seller = new Seller();
 
-            Buyer.Name = textBox2.Text;
-            Buyer.Surname = textBox1.Text ;
-            Buyer.Patronymic = textBox3.Text;
+            buyer.Name = textBox2.Text;
+            buyer.Surname = textBox1.Text ;
+            buyer.Patronymic = textBox3.Text;
 
-            Seller.Patronymic = textBox6.Text;
-            Seller.Name = textBox5.Text;
-            Seller.Surname = textBox4.Text;
+            seller.Patronymic = textBox6.Text;
+            seller.Name = textBox5.Text;
+            seller.Surname = textBox4.Text;
 
             var eq = new Equip() { Equipment = new Equipment() };
             if (eq.ShowDialog(this) == DialogResult.OK)
             {
-                listBox1.Items.Add(Seller);
-                listBox1.Items.Add(Buyer);
+                listBox1.Items.Add(seller);
+                listBox1.Items.Add(buyer);
                 listBox1.Items.Add(eq.Equipment);
             }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            button4.Enabled = listBox1.SelectedItem is Equipment;
+            button4.Enabled = listBox1.SelectedItem is string;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItem is Equipment)
+            if (listBox1.SelectedItem is string)
             {
                 listBox1.Items.Remove(listBox1.SelectedItem);
             }
         }
 
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var sfd = new SaveFileDialog() { Filter = "Участники|*.equip" };
+
+            if (sfd.ShowDialog(this) != DialogResult.OK)
+                return;
+            
+
+            string[] spp = new string[listBox1.Items.Count];
+            for (int i = 0; i < spp.Length; i++)
+                spp[i] = listBox1.Items[i].ToString();
+
+            var Form = new CompletingForm
+            {
+                Seller = seller,
+                Buyer = buyer,
+                Equip = spp,
+            };
+            
+            var xs = new XmlSerializer(typeof(CompletingForm));
+
+            var file = File.Create(sfd.FileName);
+
+            var stream = new MemoryStream();
+            pictureBox1.Image.Save(stream, ImageFormat.Jpeg);
+            seller.Photo = stream.ToArray();
+
+            xs.Serialize(file, Form);
+            file.Close();
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var ofd = new OpenFileDialog() { Filter = "Участники|*.equip" };
+
+            if (ofd.ShowDialog(this) != DialogResult.OK)
+                return;
+            var xs = new XmlSerializer(typeof(CompletingForm));
+            var file = File.OpenRead(ofd.FileName);
+            var Form = (CompletingForm)xs.Deserialize(file);
+            file.Close();
+
+            textBox1.Text = Form.Buyer.Surname;
+            textBox2.Text = Form.Buyer.Name;
+            textBox3.Text = Form.Buyer.Patronymic;
+
+
+
+            textBox4.Text = Form.Seller.Surname;
+            textBox5.Text = Form.Seller.Name;
+            textBox6.Text = Form.Seller.Patronymic;
+
+            var ms = new MemoryStream(Form.Seller.Photo);
+            pictureBox1.Image = Image.FromStream(ms);
+
+            listBox1.Items.Clear();
+
+            for (int i = 0; i < Form.Equip.Length; i++)
+                listBox1.Items.Add(Form.Equip[i]);
+        }
+
+        
+
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
