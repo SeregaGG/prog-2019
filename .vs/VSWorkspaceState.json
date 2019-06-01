@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SportsEquipmentRental",
+    "\\SportsEquipmentRental\\Web",
+    "\\SportsEquipmentRental\\Web\\Properties"
   ],
+  "SelectedNode": "\\SportsEquipmentRental\\Web\\Properties\\launchSettings.json",
   "PreviewInSolutionExplorer": false
 }

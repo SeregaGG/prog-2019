@@ -1,0 +1,22 @@
+﻿@model SportsEquipmentRental.CompletingForm
+@{
+    ViewBag.Title = "Buyer "+ Model.Buyer.Name;
+    Layout = "_Layout";
+}
+<h2>Покупатель @Model.Buyer.Name</h2>
+<table class="table table-bordered table-responsive table-hover">
+    <thead>
+        <tr>
+            <td>Форма заполнения</td>
+        </tr>
+    </thead>
+    @if (Model.Journal != null)
+    {
+        foreach (var sm in Model.Equip)
+        {
+            <tr>
+                <td>@sm</td>
+            </tr>
+        }
+    }
+</table>

@@ -53,7 +53,9 @@ namespace SportsEquipmentRental
         /// Арендуемый инвентарь
         /// </summary>
         public string[] Equip { get; set; }
-        
+
+        public List<Equipment> Journal { get; set; }
+        public Equipment Equipment { get; set; }
     }
 
     /// <summary>

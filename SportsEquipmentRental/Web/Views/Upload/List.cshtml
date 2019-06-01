@@ -1,0 +1,28 @@
+﻿@model System.Collections.Generic.List<Web.Models.DataAccessPostgreSqlProvider.DBSport>
+@{
+    ViewBag.Title = "Покупки";
+    Layout = "_Layout";
+}
+<h2>@ViewBag.Title</h2>
+@foreach (var e in Model)
+{
+    <div>
+        @e.Name
+        <table class="table table-bordered table-responsive table-hover">
+            <thead>
+                <tr>
+                    <td>Форма</td>
+                </tr>
+            </thead>
+            @if (e.Journal != null)
+            {
+                foreach (var ee in e.Journal)
+                {
+            <tr>
+                <td>@ee.Form</td>
+            </tr>
+                }
+            }
+        </table>
+    </div>
+}
